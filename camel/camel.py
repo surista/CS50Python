@@ -1,9 +1,15 @@
 user_input = input("camelCase: ")
-upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-for i in range(len(user_input)):
-    if user_input[i] in upper_case:
-        first_part = user_input[0:i]
-        second_part = user_input[i:].lower()
 
-print(first_part + "_" + second_part)
+def convertToSnakeCase(user_input):
+    upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    sol = ""
+    for char in user_input:
+        if char in upper_case:
+            sol = sol + "_" + char.lower()
+        else:
+            sol = sol + char
+    return sol
+
+print(convertToSnakeCase(user_input))
+
 
